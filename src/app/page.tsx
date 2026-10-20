@@ -8,6 +8,7 @@ import TrackingBar from "@/components/TrackingBar";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import AboutSection from "@/components/AboutSection";
 import CustomerReview from "@/components/CustomerReview";
+import CtaSection from "@/components/CtaSection";
 import Footer from "@/components/Footer";
 import TrackModal from "@/components/TrackModal";
 import QuoteModal from "@/components/QuoteModal";
@@ -44,8 +45,14 @@ export default function Home() {
       {/* About FoodBox Section (Directly Above Testimonial) */}
       <AboutSection onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Customer Review Section (Directly Above Footer) */}
+      {/* Customer Review Section (Directly Above CTA) */}
       <CustomerReview onOpenQuote={() => setIsQuoteOpen(true)} />
+
+      {/* Grand Container Terminal CTA Section (Directly Above Footer) */}
+      <CtaSection
+        onOpenQuote={() => setIsQuoteOpen(true)}
+        onOpenTrack={() => handleTrackFromTerminal("MOTO-892-NY", "urban")}
+      />
 
       {/* Minimal Footer */}
       <Footer
