@@ -1,3 +1,6 @@
+/* ══════════════════════════════════════════
+   TOP HEADER
+   ══════════════════════════════════════════ */
 .header {
   position: fixed;
   top: 0;
@@ -22,15 +25,11 @@
 }
 
 @media (max-width: 1024px) {
-  .header {
-    padding: 16px 24px;
-  }
-  .headerScrolled {
-    padding: 12px 24px;
-  }
+  .header { padding: 16px 24px; }
+  .headerScrolled { padding: 12px 24px; }
 }
 
-/* Brand Logo */
+/* ── Brand Logo ── */
 .logo {
   display: flex;
   align-items: center;
@@ -42,20 +41,13 @@
   cursor: pointer;
   user-select: none;
   transition: opacity var(--transition-fast);
+  text-decoration: none;
 }
 
-.brandText {
-  letter-spacing: 0.16em;
-  font-weight: 700;
-}
+.logo:hover { opacity: 0.9; }
 
-.brandAccent {
-  color: var(--color-brand-primary);
-}
-
-.logo:hover {
-  opacity: 0.9;
-}
+.brandText { letter-spacing: 0.16em; font-weight: 700; }
+.brandAccent { color: var(--color-brand-primary); }
 
 .logoIcon {
   display: flex;
@@ -63,7 +55,7 @@
   justify-content: center;
 }
 
-/* Center Nav Bar (Apple-style Floating Pill) */
+/* ── Desktop Center Nav Capsule ── */
 .navContainer {
   display: flex;
   align-items: center;
@@ -89,6 +81,7 @@
   display: flex;
   align-items: center;
   gap: 6px;
+  text-decoration: none;
 }
 
 .navLink:hover {
@@ -97,76 +90,157 @@
 }
 
 .navLinkActive {
-  color: var(--color-white);
+  color: #D9A926 !important;
+  background: rgba(217, 169, 38, 0.1);
 }
 
-/* Right Action CTA */
+/* ── Right CTA ── */
 .headerRight {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.mobileToggle {
-  display: none;
-  padding: 8px 12px;
-  color: var(--color-white);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  border-radius: var(--radius-pill);
+/* Hide full label text on mobile — show just icon pill */
+.btnLabel {}
+
+/* Hide desktop nav + CTA label on mobile */
+@media (max-width: 900px) {
+  .navContainer { display: none; }
+}
+
+/* ══════════════════════════════════════════
+   BOTTOM TAB BAR  (mobile only)
+   ══════════════════════════════════════════ */
+.bottomTabBar {
+  display: none; /* hidden on desktop */
 }
 
 @media (max-width: 900px) {
-  .navContainer {
-    display: none;
-  }
-  .mobileToggle {
+  .bottomTabBar {
     display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    /* Frosted glass background */
+    background: rgba(10, 13, 20, 0.78);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    /* Safe area for notched phones */
+    padding: 10px 8px calc(env(safe-area-inset-bottom) + 10px);
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.5);
   }
+
+  /* Add bottom padding to page content so it isn't hidden behind the tab bar */
+  /* Applied via global body padding — see globals note below */
 }
 
-/* Mobile Menu Overlay */
-.mobileMenu {
+/* ── Regular Tab Item ── */
+.tabItem {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 100%;
-  left: 20px;
-  right: 20px;
-  background: rgba(17, 24, 39, 0.96);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: var(--radius-lg);
-  padding: 20px;
-  gap: 12px;
-  z-index: 100;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
-  animation: slideDown 0.25s ease-out;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  padding: 6px 4px;
+  text-decoration: none;
+  color: #64748B;
+  border-radius: 12px;
+  transition: color 0.2s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s;
+  min-width: 0;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@keyframes slideDown {
-  from {
-    opacity: 0;
-    transform: translateY(-8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.tabItem:hover {
+  color: #94A3B8;
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.mobileLink {
-  font-size: 13px;
+.tabIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 32px;
+  border-radius: 10px;
+  transition: background 0.2s, transform 0.2s;
+}
+
+.tabIconActive {
+  background: rgba(217, 169, 38, 0.12);
+  transform: scale(1.05);
+}
+
+/* ── Center elevated "Services" tab ── */
+.tabItemCenter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  flex: 1;
+  padding: 6px 4px;
+  text-decoration: none;
+  color: #64748B;
+  -webkit-tap-highlight-color: transparent;
+  min-width: 0;
+}
+
+.tabCenterBubble {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #2A2A2A 0%, #1A1A1A 100%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255,255,255,0.06);
+  /* Slightly elevated above the bar */
+  transform: translateY(-10px);
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
+              background 0.2s,
+              box-shadow 0.2s;
+}
+
+.tabCenterBubble:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+}
+
+.tabCenterBubbleActive {
+  background: linear-gradient(135deg, #D9A926 0%, #c4971f 100%);
+  border-color: #D9A926;
+  box-shadow: 0 4px 20px rgba(217, 169, 38, 0.45), 0 0 0 1px rgba(217,169,38,0.3);
+}
+
+.tabCenterBubbleActive:hover {
+  box-shadow: 0 8px 28px rgba(217, 169, 38, 0.55);
+}
+
+/* ── Tab Labels ── */
+.tabLabel {
+  font-size: 10px;
   font-weight: 600;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: #CBD5E1;
-  padding: 10px 14px;
-  border-radius: var(--radius-md);
-  transition: all var(--transition-fast);
+  color: #64748B;
+  transition: color 0.2s;
+  white-space: nowrap;
+  line-height: 1;
 }
 
-.mobileLink:hover {
-  color: var(--color-white);
-  background: rgba(255, 255, 255, 0.08);
+.tabLabelActive {
+  color: #D9A926;
+}
+
+/* Center item label appears below the elevated bubble */
+.tabItemCenter .tabLabel {
+  margin-top: -6px; /* compensate for bubble translateY */
 }

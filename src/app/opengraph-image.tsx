@@ -61,13 +61,16 @@ export default async function Image() {
             </div>
             <div
               style={{
+                display: "flex",
+                alignItems: "center",
                 fontSize: "30px",
                 fontWeight: 800,
                 letterSpacing: "0.14em",
                 color: "#FFFFFF",
               }}
             >
-              FOOD<span style={{ color: "#F26A21" }}>BOX</span>
+              <span>FOOD</span>
+              <span style={{ color: "#F26A21" }}>BOX</span>
             </div>
           </div>
 
@@ -89,6 +92,7 @@ export default async function Image() {
                 height: "10px",
                 borderRadius: "50%",
                 backgroundColor: "#10B981",
+                display: "flex",
               }}
             />
             <span
@@ -116,6 +120,7 @@ export default async function Image() {
         >
           <div
             style={{
+              display: "flex",
               fontSize: "14px",
               fontWeight: 700,
               letterSpacing: "0.16em",
@@ -127,6 +132,7 @@ export default async function Image() {
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: "56px",
               fontWeight: 800,
               lineHeight: 1.1,
@@ -138,6 +144,7 @@ export default async function Image() {
           </div>
           <div
             style={{
+              display: "flex",
               fontSize: "20px",
               lineHeight: 1.5,
               color: "#94A3B8",
@@ -172,14 +179,14 @@ export default async function Image() {
                 On-Time Rate
               </span>
             </div>
-            <div style={{ width: "1px", height: "30px", backgroundColor: "rgba(255, 255, 255, 0.1)" }} />
+            <div style={{ width: "1px", height: "30px", backgroundColor: "rgba(255, 255, 255, 0.1)", display: "flex" }} />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span style={{ fontSize: "24px", fontWeight: 700, color: "#FFFFFF" }}>24/7</span>
               <span style={{ fontSize: "11px", textTransform: "uppercase", color: "#64748B", letterSpacing: "0.08em" }}>
                 Live Tracking
               </span>
             </div>
-            <div style={{ width: "1px", height: "30px", backgroundColor: "rgba(255, 255, 255, 0.1)" }} />
+            <div style={{ width: "1px", height: "30px", backgroundColor: "rgba(255, 255, 255, 0.1)", display: "flex" }} />
             <div style={{ display: "flex", flexDirection: "column" }}>
               <span style={{ fontSize: "24px", fontWeight: 700, color: "#10B981" }}>&lt;45 Min</span>
               <span style={{ fontSize: "11px", textTransform: "uppercase", color: "#64748B", letterSpacing: "0.08em" }}>
@@ -190,6 +197,8 @@ export default async function Image() {
 
           <div
             style={{
+              display: "flex",
+              alignItems: "center",
               fontSize: "16px",
               fontWeight: 700,
               letterSpacing: "0.08em",

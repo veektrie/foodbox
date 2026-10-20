@@ -175,7 +175,7 @@ export default function Footer({ onOpenTrack, onOpenQuote }: FooterProps) {
             FOODBOX
           </div>
           <div className={styles.copyright}>
-            FOODBOX. COPYRIGHT &copy; {new Date().getFullYear()}. ALL RIGHT RESERVED.
+            FOODBOX. COPYRIGHT &copy; 2026. ALL RIGHT RESERVED.
           </div>
         </div>
       </div>

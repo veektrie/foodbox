@@ -49,6 +49,12 @@ html, body {
   overflow-x: hidden;
 }
 
+@media (max-width: 900px) {
+  body {
+    padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+  }
+}
+
 /* Base Links & Buttons */
 a {
   color: inherit;

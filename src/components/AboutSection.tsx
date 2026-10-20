@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./AboutSection.module.css";
 
 interface AboutSectionProps {
@@ -43,9 +44,9 @@ export default function AboutSection({ onOpenQuote }: AboutSectionProps) {
                 REQUEST A QUOTE
               </button>
 
-              <a href="#how-we-deliver" className={styles.secondaryBtn}>
+              <Link href="/about" className={styles.secondaryBtn}>
                 ABOUT FOODBOX
-              </a>
+              </Link>
             </div>
           </div>
 

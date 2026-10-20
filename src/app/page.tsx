@@ -26,25 +26,25 @@ export default function Home() {
 
   return (
     <main>
-      {/* 1. Hero Section: Primary Value Proposition & Fleet Telematics */}
+      {/* 1. HERO: Primary Value Proposition, Telemetry & Instant Conversion Hooks */}
       <HeroSection />
 
-      {/* 2. Logistics Solutions: Core Multi-Modal Capabilities (Road, Ocean, Air) */}
-      <LogisticsSolutions onOpenQuote={() => setIsQuoteOpen(true)} />
-
-      {/* 3. Why Choose FoodBox: Strategic Pillars, Port Access & Cold Chain Tech */}
-      <WhyChooseUs />
-
-      {/* 4. How We Deliver: Clear 4-Step Operational Flow (Order to Doorstep) */}
-      <HowWeDeliver onOpenQuote={() => setIsQuoteOpen(true)} />
-
-      {/* 5. About FoodBox: Infrastructure, Fleet Scale (120+ Hubs) & Verified Performance */}
+      {/* 2. CREDIBILITY & ENTERPRISE FOUNDATION: Validate the hero promise immediately */}
       <AboutSection onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* 6. Customer Review: Social Proof, Client Testimonial Slider & Measurable Impact */}
+      {/* 3. MULTI-MODAL SERVICES: Show core capabilities (Road, Ocean, Air Freight) */}
+      <LogisticsSolutions onOpenQuote={() => setIsQuoteOpen(true)} />
+
+      {/* 4. COMPETITIVE ADVANTAGES: Why Choose FoodBox vs. alternatives */}
+      <WhyChooseUs />
+
+      {/* 5. PROCESS & FRICTION REDUCTION: 4-Step simple operational flow */}
+      <HowWeDeliver onOpenQuote={() => setIsQuoteOpen(true)} />
+
+      {/* 6. SOCIAL PROOF & VALIDATION: Client reviews, trust, and risk reversal */}
       <CustomerReview onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Grand Container Terminal CTA Section (Directly Above Footer) */}
+      {/* 7. CONVERSION CLIMAX: High-impact terminal CTA before footer */}
       <CtaSection
         onOpenQuote={() => setIsQuoteOpen(true)}
         onOpenTrack={() => handleTrackFromTerminal("MOTO-892-NY", "urban")}
