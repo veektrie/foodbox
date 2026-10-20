@@ -65,7 +65,7 @@ const FEATURES = [
 
 export default function WhyChooseUs() {
   return (
-    <section className={styles.sectionWrapper} id="insights">
+    <section className={styles.sectionWrapper} id="why-us">
       <div className={styles.container}>
         {/* ─── Section Header: Kicker, Heading & Subtext ─── */}
         <div className={styles.header}>

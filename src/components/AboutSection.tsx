@@ -10,7 +10,7 @@ interface AboutSectionProps {
 
 export default function AboutSection({ onOpenQuote }: AboutSectionProps) {
   return (
-    <section className={styles.sectionWrapper} id="about-foodbox">
+    <section className={styles.sectionWrapper} id="about">
       <div className={styles.container}>
         <div className={styles.grid}>
           {/* ─── Left Column: About Narrative & Action Group ─── */}

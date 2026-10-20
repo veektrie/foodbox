@@ -26,22 +26,22 @@ export default function Home() {
 
   return (
     <main>
-      {/* Hero Section */}
+      {/* 1. Hero Section: Primary Value Proposition & Fleet Telematics */}
       <HeroSection />
 
-      {/* Logistics Solutions Section */}
+      {/* 2. Logistics Solutions: Core Multi-Modal Capabilities (Road, Ocean, Air) */}
       <LogisticsSolutions onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* How We Deliver — Process Steps Section */}
-      <HowWeDeliver onOpenQuote={() => setIsQuoteOpen(true)} />
-
-      {/* Why Choose FoodBox / Blog & Editorial Section */}
+      {/* 3. Why Choose FoodBox: Strategic Pillars, Port Access & Cold Chain Tech */}
       <WhyChooseUs />
 
-      {/* About FoodBox Section (Directly Above Testimonial) */}
+      {/* 4. How We Deliver: Clear 4-Step Operational Flow (Order to Doorstep) */}
+      <HowWeDeliver onOpenQuote={() => setIsQuoteOpen(true)} />
+
+      {/* 5. About FoodBox: Infrastructure, Fleet Scale (120+ Hubs) & Verified Performance */}
       <AboutSection onOpenQuote={() => setIsQuoteOpen(true)} />
 
-      {/* Customer Review Section (Directly Above CTA) */}
+      {/* 6. Customer Review: Social Proof, Client Testimonial Slider & Measurable Impact */}
       <CustomerReview onOpenQuote={() => setIsQuoteOpen(true)} />
 
       {/* Grand Container Terminal CTA Section (Directly Above Footer) */}

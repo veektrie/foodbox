@@ -1,6 +1,4 @@
-"use client";
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styles from "./Navbar.module.css";
 
@@ -11,9 +9,19 @@ interface NavbarProps {
 
 export default function Navbar({ onOpenQuote, onOpenTrack }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${isScrolled ? styles.headerScrolled : ""}`}>
       {/* Brand Logo: Angled dual-facet mark from reference image + FOODBOX */}
       <Link href="/" className={styles.logo} aria-label="FOODBOX Home">
         <div className={styles.logoIcon}>
@@ -41,20 +49,20 @@ export default function Navbar({ onOpenQuote, onOpenTrack }: NavbarProps) {
         </span>
       </Link>
 
-      {/* Floating Center Nav Capsule (Reference Image) */}
+      {/* Floating Center Nav Capsule */}
       <nav className={styles.navContainer} aria-label="Main Navigation">
-        <a href="#about" className={styles.navLink}>
+        <Link href="/about" className={styles.navLink}>
           ABOUT US
-        </a>
-        <a href="#services" className={styles.navLink}>
+        </Link>
+        <Link href="/services" className={styles.navLink}>
           OUR SERVICES
-        </a>
-        <a href="#why-us" className={styles.navLink}>
+        </Link>
+        <a href="/#why-us" className={styles.navLink}>
           WHY US
         </a>
-        <a href="#industries" className={styles.navLink}>
-          INDUSTRIES
-        </a>
+        <Link href="/blog" className={styles.navLink}>
+          BLOG
+        </Link>
         <Link
           href="/track"
           className={styles.navLink}
@@ -102,34 +110,34 @@ export default function Navbar({ onOpenQuote, onOpenTrack }: NavbarProps) {
       {/* Mobile Drawer */}
       {mobileMenuOpen && (
         <div className={styles.mobileMenu}>
-          <a
-            href="#about"
+          <Link
+            href="/about"
             className={styles.mobileLink}
             onClick={() => setMobileMenuOpen(false)}
           >
             ABOUT US
-          </a>
-          <a
-            href="#services"
+          </Link>
+          <Link
+            href="/services"
             className={styles.mobileLink}
             onClick={() => setMobileMenuOpen(false)}
           >
             OUR SERVICES
-          </a>
+          </Link>
           <a
-            href="#why-us"
+            href="/#why-us"
             className={styles.mobileLink}
             onClick={() => setMobileMenuOpen(false)}
           >
             WHY US
           </a>
-          <a
-            href="#industries"
+          <Link
+            href="/blog"
             className={styles.mobileLink}
             onClick={() => setMobileMenuOpen(false)}
           >
-            INDUSTRIES
-          </a>
+            BLOG
+          </Link>
           <Link
             href="/track"
             className={styles.mobileLink}
