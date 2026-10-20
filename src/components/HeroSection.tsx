@@ -48,7 +48,7 @@ export default function HeroSection() {
           {/* Left Column: Technical Description and CTA Action Group */}
           <div className={styles.leftCol}>
             <p className={styles.technicalDescription}>
-              RELIABLE FREIGHT, TRANSPORTATION, AND LOGISTICS SOLUTIONS DESIGNED TO KEEP YOUR SUPPLY CHAIN MOVING WITH EFFICIENCY, VISIBILITY, AND CONFIDENCE.
+              Reliable freight, transportation, and logistics solutions designed to keep your supply chain moving with efficiency, visibility, and confidence.
             </p>
 
             <div className={styles.actionButtons}>

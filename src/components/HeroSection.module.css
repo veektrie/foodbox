@@ -69,18 +69,18 @@
 
 /* Headline Block */
 .headlineBlock {
-  max-width: 980px;
-  margin-top: 40px;
-  margin-bottom: 44px;
+  max-width: 820px;
+  margin-top: 24px;
+  margin-bottom: 28px;
 }
 
 .headline {
-  font-size: clamp(64px, 8.5vw, 112px);
+  font-size: clamp(38px, 4.8vw, 68px);
   font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--color-white);
-  text-shadow: 0 6px 32px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55);
 }
 
 /* Bottom Grid Layout */

@@ -50,6 +50,15 @@ export const metadata: Metadata = {
     siteName: "FOODBOX Logistics",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "FOODBOX Logistics Brand Emblem & Freight Telematics",
+        type: "image/png",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
@@ -57,6 +66,7 @@ export const metadata: Metadata = {
     description:
       "Rapid urban dispatch, commercial road freight, and international air cargo engineered with industrial precision and 24/7 live telemetry.",
     creator: "@foodboxlogistics",
+    images: ["/twitter-image"],
   },
   icons: {
     icon: [
