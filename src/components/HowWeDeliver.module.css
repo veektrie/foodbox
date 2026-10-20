@@ -1,0 +1,378 @@
+/* ─── Section Wrapper (Clean Light Surface) ────────────────────────────────── */
+.sectionWrapper {
+  background-color: #FFFFFF;
+  color: var(--color-dark-base);
+  position: relative;
+  z-index: 10;
+  padding: 100px 0 110px;
+}
+
+@media (max-width: 1280px) {
+  .sectionWrapper {
+    padding: 80px 0 90px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sectionWrapper {
+    padding: 60px 0 70px;
+  }
+}
+
+/* ─── Standard Centered Container ─────────────────────────────────────────── */
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+/* ─── Two-Column Grid: Exact Alignment ───────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 72px;
+  align-items: stretch; /* Guarantees right image height strictly matches left content */
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* ─── Left Column ─────────────────────────────────────────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+}
+
+.headerBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 48px;
+}
+
+/* Kicker */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dark-base);
+  margin-top: 0;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+.kickerSquare {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-dark-base);
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+/* Heading */
+.heading {
+  font-size: clamp(38px, 4.4vw, 56px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.1;
+  color: var(--color-dark-base);
+  margin-bottom: 24px;
+}
+
+/* Subtext */
+.subtext {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  text-transform: uppercase;
+  color: #64748B;
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+/* CTA Button (Apple-style Pill) */
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-dark-base);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  width: fit-content;
+}
+
+.ctaBtn:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+.ctaSquare {
+  width: 6px;
+  height: 6px;
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+/* ─── Process Steps ───────────────────────────────────────────────────────── */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 56px 1fr auto;
+  gap: 16px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  align-items: flex-start;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.25s ease, transform 0.25s ease, opacity 0.25s ease;
+}
+
+.step::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 3px;
+  background-color: var(--color-brand-primary);
+  border-radius: var(--radius-pill);
+  transform: scaleY(0);
+  transform-origin: center;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Active step */
+.stepActive {
+  background-color: rgba(242, 106, 33, 0.04);
+  transform: translateX(4px);
+}
+
+.stepActive::before {
+  transform: scaleY(1);
+}
+
+/* Dim non-hovered steps */
+.stepDimmed {
+  opacity: 0.35;
+}
+
+/* Arrow indicator */
+.stepArrow {
+  font-size: 18px;
+  color: var(--color-brand-primary);
+  opacity: 0;
+  transform: translateX(-6px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  padding-right: 4px;
+  font-weight: 300;
+  align-self: center;
+}
+
+.stepArrowVisible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.stepIndex {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  color: #94A3B8;
+  font-family: var(--font-mono);
+  padding-top: 2px;
+  transition: color 0.25s ease;
+}
+
+.stepIndexActive {
+  color: var(--color-brand-primary);
+  font-weight: 600;
+}
+
+.stepContent {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stepTitle {
+  font-size: clamp(20px, 2vw, 24px);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--color-dark-base);
+  line-height: 1.25;
+}
+
+.stepDesc {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #64748B;
+  line-height: 1.65;
+  max-width: 440px;
+}
+
+/* ─── Right Image Column (Apple-style Smooth 24px Card) ────────────────────── */
+.rightCol {
+  position: relative;
+  overflow: hidden;
+  background-color: #12161F;
+  border-radius: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 16px 40px -12px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  min-height: 600px;
+}
+
+@media (max-width: 960px) {
+  .rightCol {
+    height: 480px;
+    min-height: 480px;
+    border-radius: 20px;
+  }
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center;
+  border-radius: 24px;
+}
+
+/* Crossfade image layers */
+.imageLayer {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.55s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.imageLayerVisible {
+  opacity: 1;
+  z-index: 2;
+}
+
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 24px;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 10, 10, 0.02) 0%,
+    rgba(10, 10, 10, 0.12) 50%,
+    rgba(10, 10, 10, 0.6) 100%
+  );
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* ─── HUD Stats Bar (Pinned at bottom of image with smooth curves) ────────── */
+.hudBar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: rgba(18, 22, 31, 0.68);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom-left-radius: 24px;
+  border-bottom-right-radius: 24px;
+}
+
+/* Hidden sharp markers */
+.marker {
+  display: none;
+}
+
+.hudStat {
+  padding: 26px 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+
+.hudStat:first-child {
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hudNum {
+  font-size: clamp(32px, 3.2vw, 42px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: #FFFFFF;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.hudNumUnit {
+  font-size: 20px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hudDivider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hudLabel {
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #CBD5E1;
+  line-height: 1.5;
+}

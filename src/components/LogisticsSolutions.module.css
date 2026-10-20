@@ -1,0 +1,386 @@
+/* ─── Section Wrapper ─────────────────────────────────────────────────────── */
+.sectionWrapper {
+  background-color: #0A0D14;
+  color: var(--color-white);
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+
+/* ─── Section Header ──────────────────────────────────────────────────────── */
+.sectionHeader {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 80px 64px 56px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 48px;
+}
+
+@media (max-width: 900px) {
+  .sectionHeader {
+    padding: 56px 24px 40px;
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+.kickerTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--color-muted-text);
+  margin-bottom: 16px;
+}
+
+.kickerSquare {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-brand-primary);
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.mainHeading {
+  font-size: clamp(28px, 3.2vw, 42px);
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  max-width: 540px;
+}
+
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+/* ─── Stacked Rows Container (Clean Spaces Between Cards) ─────────────────── */
+.stackedRows {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 64px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px; /* Clearly visible aesthetic vertical space between rows */
+}
+
+@media (max-width: 1280px) {
+  .stackedRows {
+    padding: 0 48px 80px;
+    gap: 14px;
+  }
+}
+
+@media (max-width: 900px) {
+  .stackedRows {
+    padding: 0 20px 60px;
+    gap: 16px;
+  }
+}
+
+/* Each row: left photo card + right content card, separated by aesthetic gap */
+.serviceRow {
+  display: grid;
+  grid-template-columns: 1fr 1.05fr;
+  gap: 16px; /* Clearly visible aesthetic horizontal space between image & content */
+  align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+  .serviceRow {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+/* ─── 4 Technical Corner Markers (Hidden for smooth curved aesthetic) ─────── */
+.cardNode,
+.hudNode {
+  display: none;
+}
+
+/* ─── Left Image Panel (Distinct Card with Smooth Curves) ─────────────────── */
+.imagePanel {
+  position: relative;
+  overflow: hidden;
+  min-height: 400px;
+  height: 100%;
+  background-color: #12151E;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 1024px) {
+  .imagePanel {
+    min-height: 280px;
+    border-radius: 16px;
+  }
+}
+
+.cardPhoto {
+  object-fit: cover;
+  transition: transform 0.7s ease;
+  border-radius: 20px;
+}
+
+.serviceRow:hover .cardPhoto {
+  transform: scale(1.03);
+}
+
+.photoOverlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+  background: linear-gradient(
+    to bottom,
+    rgba(14, 18, 26, 0.08) 0%,
+    rgba(14, 18, 26, 0.28) 55%,
+    rgba(14, 18, 26, 0.65) 100%
+  );
+  z-index: 2;
+}
+
+/* ─── HUD Floating Card (Smooth rounded corners) ─────────────────────────── */
+.hudCard {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  z-index: 4;
+  background: rgba(20, 22, 30, 0.68);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 20px 24px;
+  min-width: 200px;
+  border-radius: 16px;
+}
+
+.hudMetric {
+  font-size: 42px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--color-white);
+  line-height: 1;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: baseline;
+  gap: 3px;
+}
+
+.hudUnit {
+  font-size: 22px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+}
+
+.hudDivider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  margin-bottom: 10px;
+}
+
+.hudLabel {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #CBD5E1;
+  line-height: 1.4;
+}
+
+/* ─── Right Content Panel (Smooth Curves) ─────────────────────────────────── */
+.contentPanel {
+  background-color: #171A24;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 44px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .contentPanel {
+    padding: 32px 28px;
+    border-radius: 16px;
+  }
+}
+
+/* Top meta row: index + tags */
+.topMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.indexBadge {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: #94A3B8;
+  font-family: var(--font-mono);
+}
+
+.tagsCluster {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tag {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 12px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  border-radius: var(--radius-pill);
+}
+
+/* Service Title */
+.serviceTitle {
+  font-size: clamp(26px, 3vw, 36px);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--color-white);
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+/* Description */
+.serviceDesc {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  line-height: 1.65;
+  color: #64748B;
+  max-width: 480px;
+  margin-bottom: 28px;
+}
+
+/* 3-Column Features Grid */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: 22px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 640px) {
+  .featuresGrid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+.featureCol {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding-right: 16px;
+}
+
+.featureIcon {
+  color: #94A3B8;
+  width: 20px;
+  height: 20px;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.featureTitle {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #E2E8F0;
+  line-height: 1.3;
+}
+
+.featureSub {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: #64748B;
+  line-height: 1.5;
+}
+
+/* CTA Button Row */
+.ctaRow {
+  display: flex;
+  align-items: center;
+}
+
+/* Mustard Yellow CTA variant matching template screenshot */
+.btnYellow {
+  background-color: #D9A926;
+  color: #0A0D14;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  padding: 14px 28px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  border-radius: var(--radius-pill);
+}
+
+.btnYellow:hover {
+  background-color: #E5B834;
+  transform: translateY(-1px);
+}
+
+.btnSquareDark {
+  width: 6px;
+  height: 6px;
+  background-color: #0A0D14;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+/* Orange CTA variant matching design */
+.btnOrange {
+  background-color: var(--color-brand-primary);
+  color: #FFFFFF;
+  border: 1px solid var(--color-brand-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 12px 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background 0.2s ease, transform 0.15s ease;
+  border-radius: var(--radius-pill);
+}
+
+.btnOrange:hover {
+  background-color: var(--color-brand-hover);
+  border-color: var(--color-brand-hover);
+  transform: translateY(-1px);
+}

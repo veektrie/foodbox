@@ -1,0 +1,339 @@
+/* ─── Section Wrapper (Clean Light Surface) ────────────────────────────────── */
+.sectionWrapper {
+  background-color: #FFFFFF;
+  color: var(--color-dark-base);
+  position: relative;
+  z-index: 10;
+  padding: 100px 0 110px;
+  overflow: hidden;
+}
+
+@media (max-width: 1280px) {
+  .sectionWrapper {
+    padding: 80px 0 90px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sectionWrapper {
+    padding: 60px 0 70px;
+  }
+}
+
+/* ─── Standard Centered Container ─────────────────────────────────────────── */
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* ─── Two-Column Grid ─────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 72px;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+}
+
+@media (max-width: 960px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* ─── Left Narrative Column ───────────────────────────────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dark-base);
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+.kickerSquare {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-dark-base);
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.heading {
+  font-size: clamp(34px, 4vw, 54px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  color: var(--color-dark-base);
+  margin-bottom: 24px;
+}
+
+.subtext {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  text-transform: uppercase;
+  color: #64748B;
+  max-width: 440px;
+  margin-bottom: 36px;
+}
+
+/* Button Group: Primary & Secondary Side-by-Side */
+.btnGroup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.primaryBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-dark-base);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  width: fit-content;
+}
+
+.primaryBtn:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+.btnSquare {
+  width: 6px;
+  height: 6px;
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.secondaryBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #EEF1F6;
+  color: var(--color-dark-base);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  width: fit-content;
+}
+
+.secondaryBtn:hover {
+  background-color: #E2E8F0;
+  transform: translateY(-1px);
+}
+
+/* ─── Right Visual Column: Image + 3 Floating Stat Squares ────────────────── */
+.visualCol {
+  position: relative;
+  width: 100%;
+}
+
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  border-radius: 24px;
+  overflow: hidden;
+  background-color: #12161F;
+}
+
+@media (max-width: 640px) {
+  .imageWrapper {
+    height: 200px;
+  }
+}
+
+.carrierImage {
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+/* Stat Cards Cluster: Layered on Desktop */
+.statsCluster {
+  position: relative;
+  width: 100%;
+  min-height: 270px;
+  margin-top: -85px;
+  z-index: 5;
+}
+
+@media (max-width: 960px) {
+  .statsCluster {
+    min-height: auto;
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+}
+
+@media (max-width: 580px) {
+  .statsCluster {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Card 1: Black (Top-Left) */
+.statCardBlack {
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 175px;
+  height: 175px;
+  background-color: #0A0D14;
+  color: #FFFFFF;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .statCardBlack {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+    padding: 20px;
+  }
+}
+
+/* Card 2: Yellow (Top-Right) */
+.statCardYellow {
+  position: absolute;
+  right: 10px;
+  top: 35px;
+  width: 175px;
+  height: 175px;
+  background-color: #D9A926;
+  color: #0A0D14;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.15);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .statCardYellow {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+    padding: 20px;
+  }
+}
+
+/* Card 3: Light Gray (Bottom-Center) */
+.statCardLight {
+  position: absolute;
+  left: 215px;
+  top: 90px;
+  width: 175px;
+  height: 175px;
+  background-color: #EEF1F6;
+  color: #0A0D14;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+@media (max-width: 960px) {
+  .statCardLight {
+    position: static;
+    width: 100%;
+    height: auto;
+    min-height: 140px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 580px) {
+  .statCardLight {
+    grid-column: span 2;
+  }
+}
+
+/* Stat Typography */
+.statNum {
+  font-size: clamp(38px, 3.8vw, 48px);
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  font-family: var(--font-sans);
+}
+
+.statUnit {
+  font-size: 28px;
+  font-weight: 400;
+}
+
+.statLabel {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.4;
+  opacity: 0.85;
+  font-family: var(--font-mono);
+}

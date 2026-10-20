@@ -1,0 +1,416 @@
+/* ─── Section Wrapper (Clean Light Surface) ────────────────────────────────── */
+.sectionWrapper {
+  background-color: #FFFFFF;
+  color: var(--color-dark-base);
+  position: relative;
+  z-index: 10;
+  padding: 100px 0 110px;
+  overflow: hidden;
+}
+
+@media (max-width: 1280px) {
+  .sectionWrapper {
+    padding: 80px 0 90px;
+  }
+}
+
+@media (max-width: 900px) {
+  .sectionWrapper {
+    padding: 60px 0 70px;
+  }
+}
+
+/* ─── Standard Centered Container ─────────────────────────────────────────── */
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 64px;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 20px;
+  }
+}
+
+/* ─── Two-Column Grid ─────────────────────────────────────────────────────── */
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.3fr;
+  gap: 64px;
+  align-items: center;
+}
+
+@media (max-width: 1200px) {
+  .grid {
+    grid-template-columns: 1fr 1.25fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+/* ─── Left Narrative Column ───────────────────────────────────────────────── */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-dark-base);
+  margin-bottom: 24px;
+  line-height: 1;
+}
+
+.kickerSquare {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-dark-base);
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.heading {
+  font-size: clamp(32px, 3.8vw, 50px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.12;
+  color: var(--color-dark-base);
+  margin-bottom: 24px;
+}
+
+.subtext {
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  text-transform: uppercase;
+  color: #64748B;
+  max-width: 440px;
+  margin-bottom: 32px;
+}
+
+.ctaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--color-dark-base);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.15s ease;
+  width: fit-content;
+}
+
+.ctaBtn:hover {
+  background-color: #333333;
+  transform: translateY(-1px);
+}
+
+.ctaSquare {
+  width: 6px;
+  height: 6px;
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+/* ─── Right Slider Container ──────────────────────────────────────────────── */
+.sliderContainer {
+  width: 100%;
+  overflow: hidden;
+}
+
+.trackViewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cardSlide {
+  min-width: 100%;
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Bento Card Style */
+.cardContainer {
+  position: relative;
+  background-color: #F8FAFC;
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  border-radius: 24px;
+  overflow: hidden;
+  padding: 44px 48px;
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.04);
+}
+
+@media (max-width: 768px) {
+  .cardContainer {
+    padding: 24px 20px;
+  }
+}
+
+/* 4 Technical Corner Crosshairs suppressed for Apple curve design */
+.cornerNode {
+  display: none;
+}
+.cornerTl { top: 8px; left: 8px; }
+.cornerTr { top: 8px; right: 8px; }
+.cornerBl { bottom: 8px; left: 8px; }
+.cornerBr { bottom: 8px; right: 8px; }
+
+/* Inner Layout: Photo Col + Content Col */
+.cardInner {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+@media (max-width: 768px) {
+  .cardInner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* Photo Column */
+.photoCol {
+  position: relative;
+}
+
+.photoFrame {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 350px;
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: #E2E8F0;
+}
+
+@media (max-width: 768px) {
+  .photoFrame {
+    min-height: 240px;
+    height: 260px;
+  }
+}
+
+.portrait {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Frosted HUD Badge on Photo */
+.photoHud {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  background: rgba(15, 23, 42, 0.76);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding: 16px 18px;
+}
+
+.hudStatNum {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  color: #FFFFFF;
+  line-height: 1;
+  margin-bottom: 8px;
+  font-family: var(--font-sans);
+}
+
+.hudDivider {
+  width: 100%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.14);
+  margin-bottom: 8px;
+}
+
+.hudStatLabel {
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #CBD5E1;
+  line-height: 1.4;
+}
+
+/* Content Column */
+.contentCol {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.quoteText {
+  font-size: clamp(14px, 1.25vw, 17.5px);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  line-height: 1.55;
+  color: #0A0D14;
+  margin: 0;
+}
+
+/* Author Info & Company Logo */
+.metaRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.authorInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.authorName {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0A0D14;
+  letter-spacing: -0.01em;
+}
+
+.authorRole {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #64748B;
+}
+
+.companyBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.companyIcon {
+  flex-shrink: 0;
+}
+
+.companyName {
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #0A0D14;
+}
+
+/* Category Badges */
+.tagsRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tagBadge {
+  background-color: #EAEFF5;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 6px 14px;
+  color: #475569;
+  border-radius: var(--radius-pill);
+}
+
+/* Bottom Controls: Segment Indicators + Arrows */
+.bottomControls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.carouselProgress {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+}
+
+.segmentBar {
+  flex: 1;
+  height: 4px;
+  background-color: #E2E8F0;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  border-radius: var(--radius-pill);
+  transition: background 0.25s ease;
+}
+
+.segmentActive {
+  background-color: #0A0D14;
+}
+
+.segmentBar:hover {
+  background-color: #94A3B8;
+}
+
+.arrowBtns {
+  display: flex;
+  gap: 8px;
+}
+
+.arrowBtn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 50%;
+  font-size: 16px;
+  color: #0A0D14;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.arrowBtn:hover {
+  background-color: #0A0D14;
+  color: #FFFFFF;
+  border-color: #0A0D14;
+  transform: scale(1.05);
+}

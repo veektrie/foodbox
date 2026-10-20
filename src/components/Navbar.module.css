@@ -1,0 +1,159 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 48px;
+  background: transparent;
+}
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 20px 24px;
+  }
+}
+
+/* Brand Logo */
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.14em;
+  color: var(--color-white);
+  cursor: pointer;
+  user-select: none;
+  transition: opacity var(--transition-fast);
+}
+
+.brandText {
+  letter-spacing: 0.16em;
+  font-weight: 700;
+}
+
+.brandAccent {
+  color: var(--color-brand-primary);
+}
+
+.logo:hover {
+  opacity: 0.9;
+}
+
+.logoIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Center Nav Bar (Apple-style Floating Pill) */
+.navContainer {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(18, 24, 38, 0.45);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+
+.navLink {
+  position: relative;
+  font-size: 11.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #E2E8F0;
+  padding: 8px 16px;
+  transition: all var(--transition-fast);
+  border-radius: var(--radius-pill);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.navLink:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.navLinkActive {
+  color: var(--color-white);
+}
+
+/* Right Action CTA */
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.mobileToggle {
+  display: none;
+  padding: 8px 12px;
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-pill);
+}
+
+@media (max-width: 900px) {
+  .navContainer {
+    display: none;
+  }
+  .mobileToggle {
+    display: flex;
+  }
+}
+
+/* Mobile Menu Overlay */
+.mobileMenu {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 20px;
+  right: 20px;
+  background: rgba(17, 24, 39, 0.96);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  gap: 12px;
+  z-index: 100;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.6);
+  animation: slideDown 0.25s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.mobileLink {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #CBD5E1;
+  padding: 10px 14px;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+
+.mobileLink:hover {
+  color: var(--color-white);
+  background: rgba(255, 255, 255, 0.08);
+}

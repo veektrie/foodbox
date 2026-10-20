@@ -1,0 +1,349 @@
+/* ─── Footer Wrapper (Sleek Dark Surface) ─────────────────────────────────── */
+.footer {
+  background-color: #0A0D14;
+  color: #CBD5E1;
+  position: relative;
+  z-index: 10;
+  padding: 100px 0 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    padding: 72px 0 32px;
+  }
+}
+
+/* Subtle background tech glow & geometric watermark */
+.bgGlow {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(
+    circle at top right,
+    rgba(242, 106, 33, 0.04) 0%,
+    rgba(30, 41, 59, 0.08) 45%,
+    transparent 75%
+  );
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ─── Standard Centered Container ─────────────────────────────────────────── */
+.container {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 0 64px;
+  position: relative;
+  z-index: 2;
+}
+
+@media (max-width: 1280px) {
+  .container {
+    padding: 0 48px;
+  }
+}
+
+@media (max-width: 900px) {
+  .container {
+    padding: 0 24px;
+  }
+}
+
+/* ─── Top Section: CTA + Company Navigation ───────────────────────────────── */
+.topSection {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 64px;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+@media (max-width: 1024px) {
+  .topSection {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+}
+
+/* Left CTA Group */
+.topLeft {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  margin-bottom: 20px;
+}
+
+.kickerSquare {
+  width: 6px;
+  height: 6px;
+  background-color: var(--color-brand-primary);
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+.heading {
+  font-size: clamp(36px, 4vw, 54px);
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin-bottom: 32px;
+}
+
+.contactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 14px 28px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contactBtn:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.35);
+  transform: translateY(-1px);
+}
+
+.btnSquare {
+  width: 6px;
+  height: 6px;
+  background-color: #FFFFFF;
+  flex-shrink: 0;
+  border-radius: 50%;
+}
+
+/* Right Company Navigation */
+.topRight {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.colLabel {
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #64748B;
+  margin-bottom: 20px;
+}
+
+.companyNav {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+  .companyNav {
+    gap: 28px;
+  }
+}
+
+.companyLink {
+  font-size: clamp(17px, 1.8vw, 22px);
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  transition: color 0.2s ease, transform 0.15s ease;
+  position: relative;
+}
+
+.companyLink:hover {
+  color: var(--color-brand-primary);
+  transform: translateY(-1px);
+}
+
+/* ─── Thin Horizontal Divider ─────────────────────────────────────────────── */
+.divider {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  margin: 64px 0 56px;
+}
+
+@media (max-width: 1024px) {
+  .divider {
+    margin: 48px 0 40px;
+  }
+}
+
+/* ─── Middle Section: Link Matrices + Contact ─────────────────────────────── */
+.middleSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 48px;
+  margin-bottom: 88px;
+}
+
+@media (max-width: 960px) {
+  .middleSection {
+    flex-direction: column;
+    gap: 48px;
+    margin-bottom: 64px;
+  }
+}
+
+.linksGroup {
+  display: flex;
+  gap: 88px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 1200px) {
+  .linksGroup {
+    gap: 56px;
+  }
+}
+
+@media (max-width: 640px) {
+  .linksGroup {
+    gap: 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.linkCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.linkList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.textLink {
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  transition: color 0.2s ease;
+  display: inline-block;
+}
+
+.textLink:hover {
+  color: #FFFFFF;
+}
+
+.textBtn {
+  background: none;
+  border: none;
+  padding: 0;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  font-family: inherit;
+  text-align: left;
+}
+
+.textBtn:hover {
+  color: #FFFFFF;
+}
+
+/* Right Direct Contact Info */
+.contactCol {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.contactItem {
+  display: flex;
+  flex-direction: column;
+}
+
+.contactValue {
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  letter-spacing: 0.03em;
+  transition: color 0.2s ease;
+}
+
+.contactValue:hover {
+  color: var(--color-brand-primary);
+}
+
+/* ─── Bottom Section: Giant Wordmark + Copyright ──────────────────────────── */
+.bottomSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  padding-bottom: 16px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+@media (max-width: 900px) {
+  .bottomSection {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+}
+
+.hugeWordmark {
+  font-size: clamp(68px, 15vw, 210px);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 0.85;
+  color: #FFFFFF;
+  user-select: none;
+  font-family: var(--font-sans);
+}
+
+.copyright {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #64748B;
+  white-space: nowrap;
+  padding-bottom: 10px;
+  font-family: var(--font-mono);
+}
+
+@media (max-width: 900px) {
+  .copyright {
+    padding-bottom: 0;
+    white-space: normal;
+  }
+}
