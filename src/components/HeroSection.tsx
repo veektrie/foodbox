@@ -54,7 +54,7 @@ export default function HeroSection() {
             <div className={styles.actionButtons}>
               <button
                 type="button"
-                className="btn btn-dark"
+                className="btn btn-primary"
                 onClick={() => setIsQuoteOpen(true)}
                 aria-label="Get a quote"
               >

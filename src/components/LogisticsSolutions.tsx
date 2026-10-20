@@ -163,10 +163,10 @@ export default function LogisticsSolutions({ onOpenQuote }: LogisticsSolutionsPr
         <div className={styles.headerActions}>
           <button
             type="button"
-            className={styles.btnOrange}
+            className={styles.btnYellow}
             onClick={onOpenQuote}
           >
-            <span className="btn-icon-square" />
+            <span className={styles.btnSquareDark} />
             GET A QUOTE
           </button>
           <a href="#track" className="btn btn-ghost">

@@ -55,21 +55,20 @@ export default function Navbar({ onOpenQuote, onOpenTrack }: NavbarProps) {
         <a href="#industries" className={styles.navLink}>
           INDUSTRIES
         </a>
-        <button
-          type="button"
-          onClick={onOpenTrack}
+        <Link
+          href="/track"
           className={styles.navLink}
         >
           TRACK SHIPMENT
-        </button>
+        </Link>
       </nav>
 
-      {/* Far Right Action CTA: White button with black square icon (Reference Image) */}
+      {/* Far Right Action CTA: Mustard yellow pill button */}
       <div className={styles.headerRight}>
         <button
           type="button"
           onClick={onOpenQuote}
-          className="btn btn-white"
+          className="btn btn-primary"
         >
           <span className="btn-icon-square" />
           GET A QUOTE
@@ -131,17 +130,14 @@ export default function Navbar({ onOpenQuote, onOpenTrack }: NavbarProps) {
           >
             INDUSTRIES
           </a>
-          <button
-            type="button"
+          <Link
+            href="/track"
             className={styles.mobileLink}
-            onClick={() => {
-              setMobileMenuOpen(false);
-              onOpenTrack?.();
-            }}
+            onClick={() => setMobileMenuOpen(false)}
             style={{ textAlign: "left", width: "100%" }}
           >
             TRACK SHIPMENT
-          </button>
+          </Link>
           <button
             type="button"
             onClick={() => {
