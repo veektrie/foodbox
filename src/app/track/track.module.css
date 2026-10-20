@@ -1,0 +1,876 @@
+/* ─── Tracking Page Root Wrapper ─────────────────────────────────────────── */
+.pageWrapper {
+  min-height: 100vh;
+  background-color: #0A0D14;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow-x: hidden;
+  font-family: var(--font-sans);
+}
+
+/* ─── Main Content Canvas (Sleek Apple Squircle Surface) ─────────────────── */
+.mainContainer {
+  flex: 1;
+  padding: 104px 32px 48px;
+  max-width: 1600px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (max-width: 900px) {
+  .mainContainer {
+    padding: 88px 16px 36px;
+  }
+}
+
+.canvasCard {
+  background-color: #F8FAFC;
+  color: #0A0D14;
+  border-radius: 28px;
+  padding: 32px 36px 36px;
+  box-shadow: 0 20px 60px -15px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  min-height: calc(100vh - 140px);
+}
+
+@media (max-width: 900px) {
+  .canvasCard {
+    padding: 20px 16px;
+    border-radius: 20px;
+  }
+}
+
+/* Canvas Header */
+.canvasHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.canvasTitle {
+  font-size: clamp(24px, 2.4vw, 32px);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  color: #0A0D14;
+}
+
+.headerCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background-color: #D9A926;
+  color: #0A0D14;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 12px 24px;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(217, 169, 38, 0.3);
+}
+
+.headerCtaBtn:hover {
+  background-color: #E5B834;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(217, 169, 38, 0.45);
+}
+
+/* ─── Dashboard Body: Split Sidebar & Map ────────────────────────────────── */
+.dashboardBody {
+  display: grid;
+  grid-template-columns: 360px 1fr;
+  gap: 24px;
+  align-items: stretch;
+  flex: 1;
+}
+
+@media (max-width: 1100px) {
+  .dashboardBody {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ─── Left Sidebar ────────────────────────────────────────────────────────── */
+.sidebarCol {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Search Bar */
+.searchBox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-pill);
+  padding: 10px 18px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+.searchIcon {
+  color: #94A3B8;
+  flex-shrink: 0;
+}
+
+.searchInput {
+  flex: 1;
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 13px;
+  font-family: inherit;
+  color: #0A0D14;
+}
+
+.searchInput::placeholder {
+  color: #94A3B8;
+  font-size: 12px;
+}
+
+.filterBtn {
+  background: none;
+  border: none;
+  color: #64748B;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.filterBtn:hover {
+  color: #0A0D14;
+}
+
+/* Shipment Cards Stack */
+.shipmentsStack {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inactive / Collapsed Card */
+.shipmentCard {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 18px;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.shipmentCard:hover {
+  border-color: rgba(0, 0, 0, 0.16);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.cardLeft {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.truckIconBadge {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: #F1F5F9;
+  color: #0A0D14;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.cardInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.cardLabel {
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748B;
+}
+
+.cardId {
+  font-size: 13px;
+  font-weight: 700;
+  font-family: var(--font-mono);
+  color: #0A0D14;
+}
+
+.cardRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Status Pills */
+.statusPill {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: capitalize;
+  letter-spacing: 0.04em;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.statusShipped {
+  background-color: #ECFDF5;
+  color: #059669;
+}
+
+.statusInTransit {
+  background-color: #EFF6FF;
+  color: #2563EB;
+}
+
+.statusPending {
+  background-color: #FFFBEB;
+  color: #D97706;
+}
+
+/* Expanded Card (Active Shipment Card) */
+.activeCard {
+  background-color: #FFFFFF;
+  border: 1.5px solid #00875A;
+  border-radius: 20px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  box-shadow: 0 10px 25px -8px rgba(0, 135, 90, 0.15);
+}
+
+.activeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.truckActiveBadge {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  background-color: #E6F4EA;
+  color: #00875A;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Timeline */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 8px;
+  margin: 4px 0;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  bottom: 24px;
+  left: 17px;
+  width: 1.5px;
+  background-color: #E2E8F0;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 22px;
+  position: relative;
+}
+
+.timelineItem:last-child {
+  padding-bottom: 4px;
+}
+
+.timelineDot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  border: 2px solid #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  z-index: 2;
+  margin-top: 1px;
+}
+
+.dotActive {
+  border-color: #00875A;
+  background-color: #00875A;
+}
+
+.dotInner {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.timelineTime {
+  font-size: 10px;
+  font-weight: 600;
+  color: #64748B;
+  letter-spacing: 0.04em;
+}
+
+.timelineText {
+  font-size: 12px;
+  font-weight: 500;
+  color: #0A0D14;
+  line-height: 1.35;
+}
+
+.timelineLocation {
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 400;
+}
+
+/* Driver / Carrier Row */
+.carrierBox {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  background-color: #F8FAFC;
+  border-radius: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.carrierLeft {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.carrierAvatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #E2E8F0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: #334155;
+}
+
+.carrierLabel {
+  font-size: 9.5px;
+  text-transform: uppercase;
+  color: #64748B;
+  font-weight: 500;
+}
+
+.carrierName {
+  font-size: 12px;
+  font-weight: 600;
+  color: #0A0D14;
+}
+
+.carrierActions {
+  display: flex;
+  gap: 6px;
+}
+
+.iconCircleBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #00875A;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.iconCircleBtn:hover {
+  background: #00875A;
+  color: #FFFFFF;
+  border-color: #00875A;
+}
+
+/* ─── Right Area: Interactive Warri Delta State Map ───────────────────────── */
+.mapCol {
+  position: relative;
+  background-color: #E2E8F0;
+  border-radius: 24px;
+  overflow: hidden;
+  min-height: 580px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 900px) {
+  .mapCol {
+    min-height: 480px;
+  }
+}
+
+.mapContainer {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+/* Map Header Tag / Coordinates */
+.mapOverlayTag {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: var(--radius-pill);
+  padding: 8px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.mapTagDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #10B981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.25);
+}
+
+.mapTagText {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0F172A;
+}
+
+/* Map Zoom Controls */
+.mapControls {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+}
+
+.mapZoomBtn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.mapZoomBtn:hover {
+  background-color: #F1F5F9;
+  color: #0F172A;
+}
+
+/* Floating Metric Cards on the Right of Map */
+.floatingMetrics {
+  position: absolute;
+  right: 20px;
+  bottom: 24px;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+@media (max-width: 640px) {
+  .floatingMetrics {
+    display: none;
+  }
+}
+
+.metricCard {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 12px 18px;
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 140px;
+}
+
+.metricCardLabel {
+  font-size: 9.5px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64748B;
+}
+
+.metricCardValue {
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F172A;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Floating Bottom Live Tracking Card (Matching Dribbble Reference) */
+.liveTrackingCard {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  right: 200px;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  padding: 20px 24px;
+  box-shadow: 0 16px 36px -8px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+@media (max-width: 900px) {
+  .liveTrackingCard {
+    right: 24px;
+    bottom: 16px;
+    left: 16px;
+  }
+}
+
+.liveCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.liveCardTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.liveTitle {
+  font-size: 13px;
+  font-weight: 700;
+  color: #0F172A;
+}
+
+.closeCardBtn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: #94A3B8;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.closeCardBtn:hover {
+  color: #0F172A;
+}
+
+.liveSubRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.liveId {
+  color: #00875A;
+  font-weight: 700;
+  font-family: var(--font-mono);
+}
+
+.routePointsRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 11.5px;
+  color: #334155;
+  font-weight: 500;
+}
+
+/* Progress Slider with Truck */
+.progressTrackWrapper {
+  position: relative;
+  width: 100%;
+  height: 6px;
+  background-color: #E2E8F0;
+  border-radius: var(--radius-pill);
+}
+
+.progressTrackFill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 65%;
+  background-color: #00875A;
+  border-radius: var(--radius-pill);
+}
+
+.truckProgressIcon {
+  position: absolute;
+  top: 50%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #00875A;
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 135, 90, 0.4);
+}
+
+.timestampRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #64748B;
+  font-weight: 500;
+}
+
+/* ─── Feature Not Live Yet Popup Modal ────────────────────────────────────── */
+.modalBackdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(10, 13, 20, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalBox {
+  background-color: #141824;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: 24px;
+  padding: 40px;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.85);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  animation: modalScale 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  color: #FFFFFF;
+}
+
+@media (max-width: 560px) {
+  .modalBox {
+    padding: 28px 20px;
+    border-radius: 20px;
+  }
+}
+
+@keyframes modalScale {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.modalCloseBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #CBD5E1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.modalCloseBtn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  color: #FFFFFF;
+}
+
+.modalBadgeRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.betaBadge {
+  background-color: rgba(217, 169, 38, 0.15);
+  border: 1px solid rgba(217, 169, 38, 0.35);
+  color: #FBBF24;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: var(--radius-pill);
+}
+
+.radarIconBox {
+  width: 52px;
+  height: 52px;
+  border-radius: 16px;
+  background: rgba(217, 169, 38, 0.12);
+  border: 1px solid rgba(217, 169, 38, 0.25);
+  color: #D9A926;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4px;
+}
+
+.modalTitle {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: #FFFFFF;
+  line-height: 1.25;
+}
+
+.modalDescription {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #CBD5E1;
+}
+
+.modalLocationNote {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 14px;
+  padding: 12px 16px;
+  font-size: 12px;
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modalActions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+  flex-wrap: wrap;
+}
+
+.modalPrimaryBtn {
+  flex: 1;
+  background-color: #D9A926;
+  color: #0A0D14;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 13px 22px;
+  border: none;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
+}
+
+.modalPrimaryBtn:hover {
+  background-color: #E5B834;
+  transform: translateY(-1px);
+}
+
+.modalSecondaryBtn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 13px 20px;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.modalSecondaryBtn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.4);
+}

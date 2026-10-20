@@ -113,8 +113,8 @@
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background-color: var(--color-dark-base);
-  color: #FFFFFF;
+  background-color: #D9A926;
+  color: #0A0D14;
   font-size: 11px;
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -123,19 +123,20 @@
   border: none;
   border-radius: var(--radius-pill);
   cursor: pointer;
-  transition: background 0.2s ease, transform 0.15s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   width: fit-content;
 }
 
 .ctaBtn:hover {
-  background-color: #333333;
+  background-color: #E5B834;
   transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(217, 169, 38, 0.4);
 }
 
 .ctaSquare {
   width: 6px;
   height: 6px;
-  background-color: #FFFFFF;
+  background-color: #0A0D14;
   flex-shrink: 0;
   border-radius: 50%;
 }

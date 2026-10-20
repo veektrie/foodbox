@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import HeroSection from "@/components/HeroSection";
 import LogisticsSolutions from "@/components/LogisticsSolutions";
 import HowWeDeliver from "@/components/HowWeDeliver";
-import TrackingBar from "@/components/TrackingBar";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import AboutSection from "@/components/AboutSection";
 import CustomerReview from "@/components/CustomerReview";
@@ -35,9 +34,6 @@ export default function Home() {
 
       {/* How We Deliver — Process Steps Section */}
       <HowWeDeliver onOpenQuote={() => setIsQuoteOpen(true)} />
-
-      {/* Unified Single-Terminal Tracking Bar */}
-      <TrackingBar onTrack={handleTrackFromTerminal} />
 
       {/* Why Choose FoodBox / Blog & Editorial Section */}
       <WhyChooseUs />
