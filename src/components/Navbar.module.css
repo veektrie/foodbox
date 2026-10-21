@@ -29,6 +29,12 @@
   .headerScrolled { padding: 12px 24px; }
 }
 
+@media (max-width: 640px) {
+  .header { padding: 14px 16px; }
+  .headerScrolled { padding: 10px 16px; }
+  .logo { font-size: 18px; gap: 8px; }
+}
+
 /* ── Brand Logo ── */
 .logo {
   display: flex;

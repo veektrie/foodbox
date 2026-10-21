@@ -1,15 +1,17 @@
 .heroContainer {
   position: relative;
   min-height: 100vh;
+  min-height: 100svh;
+  min-height: 100dvh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-x: hidden;
   background-color: var(--color-dark-base);
 }
 
-/* Background Photography & Cinematic Overlays (Section 4.4 of design system) */
+/* Background Photography & Cinematic Overlays */
 .bgWrapper {
   position: absolute;
   inset: 0;
@@ -32,14 +34,14 @@
   inset: 0;
   background:
     linear-gradient(to right,
-      rgba(15, 23, 42, 0.7) 0%,
-      rgba(15, 23, 42, 0.42) 40%,
-      rgba(15, 23, 42, 0.2) 65%,
-      rgba(15, 23, 42, 0.55) 100%),
+      rgba(15, 23, 42, 0.75) 0%,
+      rgba(15, 23, 42, 0.5) 40%,
+      rgba(15, 23, 42, 0.3) 65%,
+      rgba(15, 23, 42, 0.65) 100%),
     linear-gradient(to bottom,
-      rgba(15, 23, 42, 0.5) 0%,
-      rgba(0, 0, 0, 0.2) 40%,
-      rgba(17, 24, 39, 0.8) 100%);
+      rgba(15, 23, 42, 0.55) 0%,
+      rgba(0, 0, 0, 0.25) 40%,
+      rgba(17, 24, 39, 0.88) 100%);
   z-index: 2;
 }
 
@@ -57,26 +59,25 @@
   width: 100%;
 }
 
-@media (max-width: 1024px) {
-  .contentArea {
-    padding: 110px 24px 36px 24px;
-  }
-}
-
 /* Headline Block */
 .headlineBlock {
-  max-width: 980px;
-  margin-top: 40px;
-  margin-bottom: 44px;
+  max-width: 860px;
+  margin-top: 24px;
+  margin-bottom: 28px;
 }
 
 .headline {
-  font-size: clamp(64px, 8.5vw, 112px);
+  font-size: clamp(32px, 5.2vw, 68px);
   font-weight: 700;
-  line-height: 1.04;
-  letter-spacing: -0.04em;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
   color: var(--color-white);
-  text-shadow: 0 6px 32px rgba(0, 0, 0, 0.55);
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.6);
+  word-break: break-word;
+}
+
+.desktopBr {
+  display: inline;
 }
 
 /* Bottom Grid Layout */
@@ -85,32 +86,31 @@
   align-items: flex-end;
   justify-content: space-between;
   gap: 32px;
-  flex-wrap: wrap;
-  padding-top: 30px;
+  padding-top: 24px;
+  width: 100%;
 }
 
 /* Left Bottom Column: Description & Actions */
 .leftCol {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 20px;
   max-width: 480px;
 }
 
 .technicalDescription {
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: 0em;
   line-height: 1.6;
   color: #CBD5E1;
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-  max-width: 420px;
+  max-width: 440px;
 }
 
 .actionButtons {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -118,26 +118,130 @@
 .hudCluster {
   display: flex;
   align-items: stretch;
-  gap: 20px;
+  gap: 16px;
 }
 
-@media (max-width: 640px) {
-  .hudCluster {
-    flex-direction: row;
-    width: 100%;
-    gap: 12px;
+.hudCardWrapper {
+  min-width: 200px;
+}
+
+/* =========================================================
+   TABLET RESPONSIVENESS (<= 1024px)
+   ========================================================= */
+@media (max-width: 1024px) {
+  .contentArea {
+    padding: 110px 32px 36px 32px;
   }
 
-  .hudCardWrapper {
-    flex: 1;
+  .headlineBlock {
+    max-width: 720px;
+    margin-top: 20px;
+    margin-bottom: 24px;
+  }
+
+  .bottomRow {
+    gap: 24px;
+  }
+}
+
+/* =========================================================
+   MOBILE RESPONSIVENESS (<= 768px)
+   ========================================================= */
+@media (max-width: 768px) {
+  .heroContainer {
+    min-height: auto;
+    padding-bottom: 28px;
+  }
+
+  .contentArea {
+    padding: 88px 18px 20px 18px;
+    justify-content: flex-start;
+    gap: 24px;
+  }
+
+  .headlineBlock {
+    margin-top: 8px;
+    margin-bottom: 12px;
+    max-width: 100%;
+  }
+
+  .headline {
+    font-size: clamp(28px, 7.8vw, 42px);
+    line-height: 1.15;
+    letter-spacing: -0.025em;
+  }
+
+  .desktopBr {
+    display: none;
   }
 
   .bottomRow {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
+    gap: 24px;
+    padding-top: 0;
+  }
+
+  .leftCol {
+    max-width: 100%;
+    gap: 18px;
+  }
+
+  .technicalDescription {
+    font-size: 13.5px;
+    line-height: 1.55;
+    max-width: 100%;
+  }
+
+  .actionButtons {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+  }
+
+  .actionButtons > * {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    padding: 13px 16px;
+    font-size: 11.5px;
+  }
+
+  .hudCluster {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .hudCardWrapper {
+    min-width: 0;
+    width: 100%;
   }
 }
 
-.hudCardWrapper {
-  min-width: 240px;
+/* =========================================================
+   SMALL MOBILE SCREENS (<= 380px)
+   ========================================================= */
+@media (max-width: 380px) {
+  .contentArea {
+    padding: 82px 14px 16px 14px;
+    gap: 20px;
+  }
+
+  .headline {
+    font-size: 26px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .actionButtons > * {
+    width: 100%;
+  }
+
+  .hudCluster {
+    gap: 8px;
+  }
 }
